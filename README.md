@@ -1,16 +1,28 @@
-# my_flutter_app
+# Z Maker
 
-A new Flutter project.
+A Flutter app scaffold for **sleep management** focused on **shift workers / night workers**.
 
-## Getting Started
+## Features (current)
 
-This project is a starting point for a Flutter application.
+- Analog clock (hour/min/sec hands) in a circular header
+- Simple grid Calendar section below
+- Clean routing & screens scaffold (Home, Planner, Insights, Settings)
+- GetIt DI ready (minimal for now)
 
-A few resources to get you started if this is your first Flutter project:
+## Run
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+flutter pub get
+flutter run
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> If you add code-generation or platform-specific plugins later, you may need:
+>
+> - `flutter create .` (to regenerate platform folders if you started from lib-only)
+> - `dart run build_runner build --delete-conflicting-outputs`
+
+## Next
+
+- Add Drift database (sleep sessions, shifts, goals)
+- Add notification scheduling for bedtime reminders
+- Add charts for insights
