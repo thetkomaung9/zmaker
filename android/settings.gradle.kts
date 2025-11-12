@@ -18,9 +18,13 @@ pluginManagement {
 }
 
 plugins {
-    id("dev.flutter.flutter-plugin-loader") version "1.0.0"
+    // ❌ Remove the old plugin line below
+    // id("dev.flutter.flutter-plugin-loader") version "1.0.0"
+
+    // ✅ Keep only these two lines
     id("com.android.application") version "8.9.1" apply false
     id("org.jetbrains.kotlin.android") version "2.1.0" apply false
 }
 
+// ✅ Keep this include line
 include(":app")
