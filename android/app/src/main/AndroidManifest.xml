@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 package="com.example.zmaker_pro">
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <application
-        android:label="my_flutter_app"
+        android:label="ZMaker Pro"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
