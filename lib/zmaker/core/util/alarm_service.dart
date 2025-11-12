@@ -8,23 +8,37 @@ class AlarmService {
 
   static Future<void> init() async {
     if (_initialized) return;
-    const AndroidInitializationSettings aInit = AndroidInitializationSettings('@mipmap/ic_launcher');
-    const InitializationSettings initSettings = InitializationSettings(android: aInit);
+
+    const AndroidInitializationSettings aInit =
+        AndroidInitializationSettings('@mipmap/ic_launcher');
+
+    const InitializationSettings initSettings =
+        InitializationSettings(android: aInit);
+
     await _notif.initialize(initSettings);
     tzdata.initializeTimeZones();
+
     _initialized = true;
   }
 
   static Future<void> scheduleAlarm(DateTime dt, String title, String body, {int id = 0}) async {
     await init();
+
     await _notif.zonedSchedule(
       id,
       title,
       body,
       tz.TZDateTime.from(dt, tz.local),
-      const NotificationDetails(android: AndroidNotificationDetails('zmaker_channel', 'ZMaker', importance: Importance.max, priority: Priority.high)),
-      androidAllowWhileIdle: true,
-      uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
+      const NotificationDetails(
+        android: AndroidNotificationDetails(
+          'zmaker_channel',
+          'ZMaker',
+          importance: Importance.max,
+          priority: Priority.high,
+        ),
+      ),
+      matchDateTimeComponents: DateTimeComponents.time, // ✅ new API usage
+      payload: 'zmaker_alarm', // optional payload
     );
   }
 }
