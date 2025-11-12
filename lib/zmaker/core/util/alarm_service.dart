@@ -37,8 +37,9 @@ class AlarmService {
           priority: Priority.high,
         ),
       ),
-      matchDateTimeComponents: DateTimeComponents.time, // ✅ new API usage
-      payload: 'zmaker_alarm', // optional payload
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle, // ✅ ထည့်ရန်လိုတဲ့ parameter
+      matchDateTimeComponents: DateTimeComponents.time,
+      payload: 'zmaker_alarm',
     );
   }
 }
