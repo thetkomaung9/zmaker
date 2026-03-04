@@ -5,5 +5,3 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const ZMakerApp());
 }
-//gugjgjgh
-//hihgi
